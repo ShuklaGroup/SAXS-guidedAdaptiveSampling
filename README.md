@@ -1,6 +1,6 @@
 # SAXS-guided Adaptive Sampling
 
-Molecular simulations can be utilized to predict protein structure ensembles and dynamics, though sufficient sampling of molecular ensembles and identification of key biologically relevant conformations remains challenging. SAXS-guided adaptive sampling is an efficient sampling protocol for large-scale unbiased molecular dynamics (MD) simulations to enhance time efficiency and identify functionally relevant conformations of proteins and complexes. The central idea of this methodology is to utilize coarse protein structural information obtained from low-resolution experimental techniques to guide Markov state model (MSM)-based adaptive sampling. 
+Molecular simulations can be utilized to predict protein structure ensembles and dynamics, though sufficient sampling of molecular ensembles and identification of key biologically relevant conformations remains challenging. SAXS-guided adaptive sampling is an efficient sampling protocol for large-scale unbiased molecular dynamics (MD) simulations to enhance time efficiency and identify functionally relevant conformations of proteins and complexes. The central idea is to utilize coarse protein structural information obtained from low-resolution experimental techniques to guide Markov state model (MSM)-based adaptive sampling. 
 
 ## MSM-based adaptive sampling
 
