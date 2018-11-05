@@ -14,12 +14,16 @@ Small angle x-ray scattering (SAXS) is a popular technique to characterize both 
 This collection includes the python and bash scripts for implementing the adaptive sampling protocols guided by SAXS and hybrid information. More details for the individual steps of the protocols are described below. 
 
 The required software packages for implementing SAXS-guided adaptive sampling protocols are listed below: 
-- Numpy: http://www.numpy.org/
+- Numpy: http://www.numpy.org
 - MdTraj: http://mdtraj.org
 - MSMBuilder: http://msmbuilder.org
+- Matplotlib: https://matplotlib.org
+- CPPTRAJ: http://ambermd.org
+- Crysol: https://www.embl-hamburg.de/biosaxs/crysol.html
+- WAXSiS: http://waxsis.uni-goettingen.de/
 
 ### 01-Featurization
-Beginning with running short parallel MD simulations on available protein structures (e.g. crystal structure), we obtain a collection of protein conformations. In order to cluster these protein conformations, we need to calculate some structural features that can describe protein conformational changes and dynamics, known as featurization process. 
+Beginning with running short parallel MD simulations on available protein structures (e.g. crystal structure), one can obtain a collection of protein conformations. In order to cluster these protein conformations, one will need to calculate some structural features that can describe protein conformational changes and dynamics, known as featurization process. 
 
 In this folder, three sample scripts demonstrate the featurizations based on root mean square deviation (RMSD) of protein from its native structure (featurizeRMSD.py) and dihedral angles (featurizeDihedral.py) for protein folding trajetories, as well as a combination of various features (featurizeAssociation.py) for protein-protein association process.
 
@@ -39,7 +43,7 @@ The script (discrepancy.py) is used to calculate the SAXS discrepancy values bet
 ### 05-AdaptiveSampling
 Based on the calculated SAXS discrepancy scores, one can then choose the cluster states for starting new MD simulations. The script (pickAdaptiveSeeds.py) is used to randomly pick a few structures from the clusters with the lowest SAXS discrepancy scores as the adaptive seeds for next round of parallel MD simulations. 
 
-In addition, other type of structural information such as distance restraints inferred from evolutionary couplings can be combined with SAXS to pick the structures, in order to collectively enhance sampling efficiency. Steps 01-05 are repeated until the target structure is discovered. 
+In addition, other type of structural information such as distance restraints inferred from evolutionary couplings can be combined with SAXS to pick the structures, in order to collectively enhance sampling efficiency. Steps 01-05 are repeated until the target structure which can match the target SAXS profile or other type of experimental data is discovered. 
 
 ### 06-MSMConstructions
 For the final analysis, in order to construct MSM to describe full protein dynamics, one will have to choose the lag time. The script (msmTimescales.py) is used to plot the timescale plots with respect to lag time used in building MSMs. By checking the convergence of the slowest timescales, one can choose the optimal lag time. 
