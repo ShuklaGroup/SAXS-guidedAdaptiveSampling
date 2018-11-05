@@ -19,22 +19,27 @@ Beginning with running short parallel simulations on available protein structure
 In this folder, three sample scripts demonstrate the featurizations based on root mean square deviation (RMSD) of proteins from native structure (featurizeRMSD.py) and dihedral angles (featurizeDihedral.py) for protein folding trajetories, as well as a combination of various features (featurizeAssociation.py) for protein-protein association process. 
 
 ### 02-Clustering
-Unsupervised clustering can then be performed on the obtained features using a variety of algorithms. Time-lagged independent component (tICA) analysis is commonly used in clustering MD trajectories, in order to capture the slowest-relaxing degrees of freedom from linear combinations of input features. 
-
-In this folder, a sample script (clustering_tica.py) demonstrates the clustering process using tICA and k-means algorithm with MSMBuilder. 
+Unsupervised clustering can then be performed on the obtained features using a variety of algorithms. Time-lagged independent component (tICA) analysis is commonly used in clustering MD trajectories, in order to capture the slowest-relaxing degrees of freedom from linear combinations of input features. In this folder, a sample script (clustering_tica.py) demonstrates the clustering process using tICA and k-means algorithm with MSMBuilder. 
 
 ### 03-ExtractStructures
 Next, in order to calculate the SAXS profiles for each cluster, we need to extract protein structures from each cluster as PDB or trajectory format depending on the choice of software for SAXS calculation. 
 
-In this folder, the first set of scripts (0-ExtractToPDB) show the processes of randomly extracting structures from each cluster as PDB files, and using the PDB files to calculate the SAXS profiles using Crysol. Crysol is the most commonly used implicit-solvent SAXS modeling software. 
-
-Another set of scripts (1-ExtractToXTC) show the processes of extracting all frames from each cluster in MD data (with water molecules) as single xtc trajectories. The xtc tracjetories can then be used as input files to calculate the SAXS profiles using WAXSiS. WAXSiS is an explicit-solvent SAXS modeling software. 
+In this folder, the first set of scripts (0-ExtractToPDB) show the processes of randomly extracting structures from each cluster as PDB files, and using the PDB files to calculate the SAXS profiles using Crysol. Crysol is the most commonly used implicit-solvent SAXS modeling software. Another set of scripts (1-ExtractToXTC) show the processes of extracting all frames from each cluster in MD data (with water molecules) as single xtc trajectories. The xtc tracjetories can then be used as input files to calculate the SAXS profiles using WAXSiS. WAXSiS is an explicit-solvent SAXS modeling software. 
 
 ### 04-SAXSDiscrepancy
-To rank the 
+The script (discrepancy.py) is used to calculate the SAXS discrepancy values between the SAXS profiles of individual states and the target experimental or computation SAXS data. The SAXS discrepancy score implemented is the reduced chi^2 function. 
 
 ### 05-AdaptiveSampling
+The calculated SAXS discrepancy scores are then used to choose the clusters for starting new MD simulations. The script (pickAdaptiveSeeds.py) is used to randomly pick a few structures from the clusters (with the lowest SAXS discrepancy scores) as the adaptive seeds for next round of parallel simulations. 
+
+Additional structural information such as distance restraints inferred from evolutionary couplings can be combined with SAXS to pick the structures, in order to collectively enhance sampling efficiency. Steps 01-05 are repeated until the target structure is discovered. 
 
 ### 06-MSMConstructions
+For the analysis, in order to construct the MSM to describe protein dynamics, one will have to choose the lag time. The script msmTimescales.py is used to plot the timescale plots with respect to lag time. By checking the convergence of the slowest timescales, one can justify the choice of lag time.  
 
 ### 07-KineticMonteCarlo
+In this folder, the set of python scripts are used to perform kinetic Monte Carlo simulations on the constructed MSMs to compare the sampling efficiency using a variety of adaptive sampling protocols. 
+
+Please refer to the following manuscript for more method details.
+
+Zhao, C. & Shukla, D. SAXS-guided enhanced unbiased sampling for structure determination of proteins and complexes. Sci. Rep. (2018). Under review.  
