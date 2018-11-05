@@ -27,7 +27,7 @@ for i in List:
   c = np.transpose(tran_b)
   dataset.append(c)
 
-# Perform time independent component analysis on the normalized features
+# Perform time-lagged independent component analysis on the normalized features
 from msmbuilder.decomposition import tICA
 tica = tICA(n_components=4, lag_time=1)
 tica.fit(dataset)
