@@ -14,6 +14,7 @@ Small angle x-ray scattering (SAXS) is a popular technique to characterize both 
 This collection includes the python and bash scripts for implementing the adaptive sampling protocols guided by SAXS and hybrid information. More details for the individual steps of the protocols are described below. 
 
 The required software packages for implementing SAXS-guided adaptive sampling protocols are listed below: 
+- Python 3: https://www.python.org 
 - Numpy: http://www.numpy.org
 - MdTraj: http://mdtraj.org
 - MSMBuilder: http://msmbuilder.org
