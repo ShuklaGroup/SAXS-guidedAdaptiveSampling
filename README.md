@@ -53,6 +53,8 @@ For the final analysis, in order to construct MSM to describe full protein dynam
 In this folder, the set of python scripts are used to perform kinetic Monte Carlo simulations on the constructed MSMs to compare the sampling efficiency using a variety of adaptive sampling protocols. 
 
 ## Reference
-Please refer to the following manuscript for more method details. Please feel free to reach to us if you have any questions (diwakar.shukla@shuklagroup.org).  
+Please refer to the following manuscript for more method details. 
 
 Zhao, C. & Shukla, D. SAXS-guided enhanced unbiased sampling for structure determination of proteins and complexes. Sci. Rep. (2018). Under review. 
+
+Please feel free to reach to us if you have any questions (diwakar.shukla@shuklagroup.org).  
