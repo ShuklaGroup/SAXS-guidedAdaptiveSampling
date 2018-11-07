@@ -57,4 +57,4 @@ Please refer to the following manuscript for more method details.
 
 Zhao, C. & Shukla, D. SAXS-guided enhanced unbiased sampling for structure determination of proteins and complexes. Sci. Rep. (2018). Under review. 
 
-Please feel free to reach to us if you have any questions (diwakar.shukla@shuklagroup.org).  
+Please feel free to reach out to us if you have any questions (diwakar.shukla@shuklagroup.org).  
