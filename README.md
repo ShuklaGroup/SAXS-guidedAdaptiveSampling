@@ -55,6 +55,6 @@ In this folder, the set of python scripts are used to perform kinetic Monte Carl
 ## Reference
 Please refer to the following manuscript for more method details. 
 
-Zhao, C. & Shukla, D. SAXS-guided enhanced unbiased sampling for structure determination of proteins and complexes. Sci. Rep. (2018). Under review. 
+Zhao, C. and Shukla, D. SAXS-guided enhanced unbiased sampling for structure determination of proteins and complexes. Scientific Reports 2018, 8, 17748. 
 
 Please feel free to reach out to us if you have any questions (diwakar.shukla@shuklagroup.org).  
